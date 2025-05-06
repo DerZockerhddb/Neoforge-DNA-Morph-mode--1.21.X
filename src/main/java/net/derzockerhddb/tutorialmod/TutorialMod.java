@@ -1,5 +1,6 @@
 package net.derzockerhddb.tutorialmod;
 
+import net.derzockerhddb.tutorialmod.block.ModBlocks;
 import net.derzockerhddb.tutorialmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -38,7 +39,7 @@ public class TutorialMod {
         NeoForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
-
+        ModBlocks.register(modEventBus);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -54,6 +55,9 @@ public class TutorialMod {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey()== CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.DNA);
+        }
+        if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS){
+            event.accept(ModBlocks.BIOASSAEMBLER_BLOCK);
         }
     }
 

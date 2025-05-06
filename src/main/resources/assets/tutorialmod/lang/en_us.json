@@ -1,3 +1,5 @@
 {
-  "item.tutorialmod.dna": "Dna"
+  "item.tutorialmod.dna": "Dna",
+
+  "block.tutorialmod.bioassembler_block": "Bio Assembler"
 }
